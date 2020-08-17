@@ -18,7 +18,7 @@ submit.addEventListener("click", () =>{
 async function getSong(searchMp3){
     const searchResult = await fetch(`https://api.lyrics.ovh/suggest/${searchMp3}`);
     const data = await searchResult.json();
-    getData(data);
+    getData(data)
 }
 //Display Search Result in UI
 function getData(data){
@@ -37,8 +37,8 @@ function getData(data){
                 </div> 
             </div>    
         `
-        )
-        .join('')}  
+        ).slice(0, 10)
+        .join('')} 
     </div>
     `;
 }
